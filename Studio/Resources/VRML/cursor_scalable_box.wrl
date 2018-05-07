@@ -1,0 +1,68 @@
+#VRML V2.0 utf8
+
+DEF	cursor_scalable_box Transform {
+	translation	0 .5 0.5
+	children [
+		Shape {
+			appearance Appearance {
+    			material DEF myMaterial Material {		
+					diffuseColor 0 .21 .34
+					transparency .55
+					specularColor .3 .92 .98
+					emissiveColor 0 .22 .35
+					ambientIntensity 0
+					shininess .8
+    			}
+			}
+			geometry Box {
+				size 1 1 1
+			}
+		}
+	]
+}
+
+# Animation brightness and colors
+DEF Clock TimeSensor {
+	cycleInterval 3
+	loop TRUE
+}
+DEF boxIntensity ScalarInterpolator {
+	key [ 0 0.5 0.5 1 ]
+	keyValue [ 0.8 0.8 0 0 ]
+}
+#DEF BoxDiffuse ColorInterpolator {
+#  key [ 0 0.65  1 ]
+#  keyValue [ 0 .1 .15 0 .21 .34 0 .21 .34 0 .1 .15 ]
+#}
+DEF BoxEmissive ColorInterpolator {
+	key [ 0 0.5  1 ]
+	keyValue [ 0 .22 .35  0 .44 .7  0 .22 .35   ]
+}
+
+
+ROUTE Clock.fraction_changed TO boxIntensity.set_fraction
+#ROUTE Clock.fraction_changed TO BoxDiffuse.set_fraction
+ROUTE Clock.fraction_changed TO BoxEmissive.set_fraction
+
+#ROUTE boxIntensity.value_changed TO myMaterial.set_specularColor
+#ROUTE BoxDiffuse.value_changed TO myMaterial.set_diffuseColor
+ROUTE BoxEmissive.value_changed TO myMaterial.set_emissiveColor 
+
+
+
+#DEF test_box Transform {
+#	translation	0 0 0
+#	scale .8 .1 .1
+#	children [
+#		Shape {
+#			appearance Appearance {
+#				material Material {
+#					diffuseColor 1 .29 .48
+#				}
+#			}
+#			geometry Box {
+#				size 1 1 1
+#			}
+#		}				
+#	]	
+#}

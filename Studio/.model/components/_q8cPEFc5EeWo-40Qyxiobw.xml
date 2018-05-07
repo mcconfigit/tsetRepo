@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comp:Component xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:comp="http://virtubuil.com/schemas/comp.ecore"
+    uuid="_q8cPEFc5EeWo-40Qyxiobw" name="link_component"
+    componentClass="LINK" displayName="Link Component">
+  <variables xsi:type="comp:DeclaredVariable" uuid="_YHRbsFdAEeWo-40Qyxiobw"
+      name="height" visibility="800" initValue="50">
+    <domain uuid="_YHRbsVdAEeWo-40Qyxiobw" name="local"
+        visibility="300">
+      <typeSet uuid="_GC9ixKTqEea8d6P1JTl01w" bitSet="10"/>
+    </domain>
+  </variables>
+  <variables xsi:type="comp:DeclaredVariable" uuid="_WrLRIFdAEeWo-40Qyxiobw"
+      name="width" visibility="800" initValue="50">
+    <domain uuid="_WrLRIVdAEeWo-40Qyxiobw" name="local"
+        visibility="300">
+      <typeSet uuid="_GC-J0qTqEea8d6P1JTl01w" bitSet="10"/>
+    </domain>
+  </variables>
+  <cursorTwoD uuid="_5hDdIFc7EeWo-40Qyxiobw" name="Cursor3">
+    <onColor href="../product_model.xml#N65557"/>
+  </cursorTwoD>
+  <geometry deletable="false" uuid="_q8cPEVc5EeWo-40Qyxiobw"
+      name="root">
+    <threeDElements xsi:type="comp:VRML" uuid="_-pjwcEF7EeiCI8zfhf_1EQ"
+        name="VRML_file_selector">
+      <vrmlFile href="../../model.build#_EOau4BWEEeiPb9qnKmug-Q"/>
+    </threeDElements>
+    <units uuid="_fdGZwFdAEeWo-40Qyxiobw" name="move_next"/>
+    <units uuid="_dbbngFdBEeWo-40Qyxiobw" name="move_subs"/>
+    <parentPlugs uuid="_q8cPElc5EeWo-40Qyxiobw" name="ParentPlug"/>
+  </geometry>
+  <roles uuid="_wbLvsFc5EeWo-40Qyxiobw" name="nextLink"
+      initValue="NONE" public="false" type="LINKINSUBLINK"
+      components="link_component, NONE, " lineInsertVariable="true">
+    <facets xsi:type="comp:PlugFacet" uuid="_GDDCV6TqEea8d6P1JTl01w"
+        geoUnit="_fdGZwFdAEeWo-40Qyxiobw" position="(5,0,0)"
+        axis="(1,0,0)" type="plugForLinkConnection"/>
+    <facets xsi:type="comp:TwinRoleFacet" uuid="_GDDpYKTqEea8d6P1JTl01w"/>
+    <domain uuid="_wbLvsVc5EeWo-40Qyxiobw" name="local"
+        visibility="300">
+      <typeSet uuid="_GDDpY6TqEea8d6P1JTl01w" bitSet="65536"/>
+      <values uuid="_xx8HQFc5EeWo-40Qyxiobw" name="link_component"
+          editable="false" visibility="300"/>
+      <values uuid="N65792" name="NONE" editable="false"
+          visibility="300"/>
+    </domain>
+  </roles>
+  <roles uuid="_D8hWcFc8EeWo-40Qyxiobw" name="subs"
+      initValue="NONE" components="sub_component, NONE, ">
+    <facets xsi:type="comp:PlugFacet" uuid="_GDEQdqTqEea8d6P1JTl01w"
+        geoUnit="_dbbngFdBEeWo-40Qyxiobw" position="(0,0,10)"
+        axis="(1,0,0)"/>
+    <domain uuid="_D8hWcVc8EeWo-40Qyxiobw" name="local"
+        visibility="300">
+      <typeSet uuid="_GDEQeaTqEea8d6P1JTl01w" bitSet="65536"/>
+      <values uuid="_E2bZ8Fc8EeWo-40Qyxiobw" name="sub_component"
+          editable="false" visibility="300"/>
+      <values uuid="N65819" name="NONE" editable="false"
+          visibility="300"/>
+    </domain>
+  </roles>
+</comp:Component>
